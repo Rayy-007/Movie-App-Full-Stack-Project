@@ -9,7 +9,7 @@ import { Button } from "react-bootstrap";
 const Hero = ({ movies }) => {
   const navigate = useNavigate();
 
-  function reviews(movieId) {
+  function addReviews(movieId) {
     navigate(`/Reviews/${movieId}`);
   }
 
@@ -49,7 +49,7 @@ const Hero = ({ movies }) => {
                     <div className="movie-review-button-container">
                       <Button
                         variant="info"
-                        onClick={() => reviews(movie.imdbId)}
+                        onClick={() => addReviews(movie.imdbId)}
                       >
                         Leave Review
                       </Button>

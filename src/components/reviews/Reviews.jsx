@@ -10,7 +10,6 @@ const Reviews = ({ getMovieData, singleMovie, reviews, setReviews }) => {
   const reviewText = useRef();
   const params = useParams();
   const imdbId = params.imdbId;
-  console.log(reviews);
 
   useEffect(() => {
     getMovieData(imdbId);
