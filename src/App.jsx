@@ -1,5 +1,8 @@
-import { React, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import api from "./api/axiosConfig";
+import Layout from "./layout/Layout";
+import Home from "./components/home/Home";
 
 function App() {
   const [movies, setMovies] = useState();
@@ -7,8 +10,7 @@ function App() {
   const getMovies = async () => {
     try {
       const response = await api.get("api/v1/movies");
-      console.log(response);
-
+      console.log(response.data);
       setMovies(response.data);
     } catch (error) {
       console.log(error);
@@ -19,7 +21,15 @@ function App() {
     getMovies();
   }, []);
 
-  return <div>App</div>;
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home movies={movies} />} />
+        </Route>
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
