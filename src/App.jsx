@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import api from "./api/axiosConfig";
 import Layout from "./layout/Layout";
-import Home from "./components/home/Home";
-import Header from "./components/header/Header";
-import Trailer from "./components/trailer/Trailer";
-import Reviews from "./components/reviews/Reviews";
-import PageNotFound from "./components/pageNotFound/PageNotFound";
+import {
+  Home,
+  Header,
+  Trailer,
+  Reviews,
+  PageNotFound,
+} from "./components/pagesImport";
 
 function App() {
   const [movies, setMovies] = useState();
